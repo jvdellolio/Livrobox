@@ -42,7 +42,7 @@ Para executar o Livrobox em sua máquina local, siga os passos abaixo:
 6. Acesse o aplicativo no navegador:
    http://127.0.0.1:8000/
 
-##Contribuições
+## Contribuições
 Contribuições são bem-vindas! Se você deseja contribuir para o projeto, siga estas etapas:
 
 Fork o projeto.
@@ -51,10 +51,10 @@ Faça suas alterações e commit (git commit -m 'Adiciona nova feature').
 Faça push para a branch (git push origin feature/nome-da-feature).
 Abra um Pull Request.
 
-##Licença
+## Licença
 Este projeto está licenciado sob a MIT License. Consulte o arquivo LICENSE para mais detalhes.
 
-##Autor
+## Autor
 João Vitor Lima Dell'Olio - jvdellolio
 
 Sinta-se à vontade para ajustar as seções de acordo com as características específicas do seu projeto!
