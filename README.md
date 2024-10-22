@@ -59,20 +59,41 @@ Para executar o Livrobox em sua máquina local, siga os passos abaixo:
 
 Contribuições são bem-vindas! Se você deseja contribuir para o projeto, siga estas etapas:
 
-1. Fork o projeto.
-2. Crie uma nova branch:
+1. **Fork o projeto**:
+   - Acesse a página do repositório [Livrobox](https://github.com/jvdellolio/Livrobox).
+   - Clique no botão **Fork** no canto superior direito da página.
+   - Escolha onde deseja criar o fork (na sua conta pessoal ou em uma organização, se aplicável).
+
+2. **Clone o seu fork**:
+   - Após o fork ser criado, vá para o seu repositório forked.
+   - Clique no botão **Code** e copie o URL (HTTPS ou SSH).
+   - Execute o seguinte comando no terminal:
+     ```bash
+     git clone https://github.com/seu-usuario/Livrobox.git
+     ```
+     (Substitua `seu-usuario` pelo seu nome de usuário do GitHub.)
+
+3. **Crie uma nova branch**:
    ```bash
    git checkout -b feature/nome-da-feature
    ```
-3. Faça suas alterações e commit:
+
+4. **Faça suas alterações e commit**:
    ```bash
    git commit -m 'Adiciona nova feature'
    ```
-4. Faça push para a branch:
+
+5. **Faça push para a branch**:
    ```bash
    git push origin feature/nome-da-feature
    ```
-5. Abra um Pull Request.
+
+6. **Abra um Pull Request**:
+   - Vá para a página do seu repositório forked no GitHub.
+   - Clique no botão **Compare & pull request**.
+   - Descreva suas alterações e clique em **Create pull request**.
+
+
 
 ## Licença
 
