@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1e1e1e; /* Cor de fundo escura */
+            color: #e0e0e0; /* Cor do texto claro */
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .detalhe-container {
+            background-color: #2c2c2c; /* Cor do fundo da seção de detalhes */
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
+            max-width: 600px; /* Limite a largura */
+        }
+
+        .detalhe-container img {
+            width: 100%;
+            height: auto; /* Mantém a proporção da imagem */
+            background-color: #3a3a3a; /* Cor de fundo cinza escura para a imagem */
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        p {
+            text-align: justify; /* Alinhamento do texto */
+            font-size: 1.2em;
+            color: #e0e0e0; /* Cor do texto */
+        }
+
+        /* Botões de ação */
+        .action-button {
+            display: inline-block;
+            width: 150px;
+            margin: 15px 5px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            color: white;
+        }
+
+        .back-button {
+            background-color: #3498db; /* Azul claro */
+        }
+
+        .back-button:hover {
+            background-color: #2980b9; /* Azul mais escuro ao passar o mouse */
+        }
+
+        .edit-button {
+            background-color: #f39c12; /* Laranja */
+        }
+
+        .edit-button:hover {
+            background-color: #e67e22; /* Laranja mais escuro */
+        }
+
+        .delete-button {
+            background-color: #e74c3c; /* Vermelho */
+        }
+
+        .delete-button:hover {
+            background-color: #c0392b; /* Vermelho mais escuro */
+        }
+
+        /* Estrelas */
+        .star-wrapper {
+            display: inline-block;
+            position: relative;
+            font-size: 20px;
+            color: gold;
+        }
+
+        .star-wrapper .half-star {
+            position: absolute;
+            overflow: hidden;
+            width: 50%;
+            top: 0;
+            left: 0;
+            color: gold;
+        }
+
+        .emptystar {
+            color: lightgray;
+        }
+        .fullstar {
+            color: gold;
+        }
+
+        .emptystar-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .emptystar-wrapper .emptystar {
+            position: relative;
+            overflow: hidden;
+            width: 50%;
+            top: 0;
+            left: 0;
+            color: lightgrey;
+        }
+        a {
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>{{ livro.titulo }}</h1>
+    <div class="detalhe-container">
+        <h2>Autor: {{ livro.autor }}</h2>
+        <h2>Gênero: {{ livro.genero }}</h2>
+        <h2>Ano de publicação: {{ livro.ano_publicacao }}</h2>
+        <h2>Descrição:</h2>
+        <p>{{ livro.descrição }}</p>
+        <img src="{{ livro.imagem.url }}" alt="imagem do livro">
+        <h2>Avaliação:</h2>
+        <div style="display: flex; flex-direction: row; align-items: center; gap: 3px; justify-content: center;">
+            <!-- Contêiner para as estrelas sobrepostas -->
+            {% for i in lista_estrelas_inteiras %}
+                <span class="fullstar">&#9733;</span> <!-- Estrela cheia sobreposta -->
+            {% endfor %}
+            <!-- Estrela meia cheia -->
+            {% if meia_estrela %}
+                <span class="star-wrapper">
+                    <span class="emptystar">&#9733;</span> <!-- Estrela vazia como fundo -->
+                    <span class="half-star">&#9733;</span> <!-- Metade da estrela cheia -->
+                </span>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Botões de ação: Voltar, Editar, Deletar -->
+    <div style="text-align: center;">
+        <button class="action-button back-button" onclick="window.location.href='/'">Voltar</button>
+        <a class="action-button edit-button" href="{% url 'editar_livro' livro.id %}">Editar</a>
+        <button class="action-button delete-button" onclick="window.location.href='/deletar_livro/{{ livro.id }}/'">Deletar</button>
+    </div>
+
+</body>
+</html>
